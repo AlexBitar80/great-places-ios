@@ -1,0 +1,4 @@
+.DS_Store
+*.xcuserstat
+xcuserdata/
+great-places-ios/Resources/Environments.swift
