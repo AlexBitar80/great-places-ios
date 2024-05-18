@@ -32,7 +32,16 @@ class MainViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .systemBackground
+        title = "Great Places iOS"
         view.addSubview(titleLabel)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self,
+                                                            action: #selector(addButtonTapped))
+    }
+    
+    @objc private func addButtonTapped() {
+        let viewController = NewPlaceFormViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func addConstraints() {
