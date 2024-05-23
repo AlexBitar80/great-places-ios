@@ -7,19 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE02B1F62BF9209E00485DCF /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02B1F52BF9209E00485DCF /* PlaceModel.swift */; };
+		CE02B1F82BF920C700485DCF /* PlaceLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02B1F72BF920C700485DCF /* PlaceLocationModel.swift */; };
+		CE02B1FB2BF9222700485DCF /* PlaceListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02B1FA2BF9222700485DCF /* PlaceListViewCell.swift */; };
+		CE5CB3EC2BF6F6A700D2821A /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3EB2BF6F6A700D2821A /* GoogleMaps */; };
+		CE5CB3EE2BF6F6A700D2821A /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3ED2BF6F6A700D2821A /* GoogleMapsBase */; };
+		CE5CB3F02BF6F6A700D2821A /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3EF2BF6F6A700D2821A /* GoogleMapsCore */; };
+		CE5CB3F22BF6F6A700D2821A /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3F12BF6F6A700D2821A /* GoogleMapsM4B */; };
+		CE5CB3F52BF6F6B400D2821A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3F42BF6F6B400D2821A /* Kingfisher */; };
+		CE5CB3F72BF6F6DF00D2821A /* Environments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB3F62BF6F6DF00D2821A /* Environments.swift */; };
+		CEEAE3BE2BF8526C0068A3D8 /* NewPlaceFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAE3BD2BF8526C0068A3D8 /* NewPlaceFormViewController.swift */; };
+		CEEAE3C12BF85CBB0068A3D8 /* ExampleEnvironments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAE3C02BF85CBB0068A3D8 /* ExampleEnvironments.swift */; };
 		CEF1BE172BF453E8009655C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BE162BF453E8009655C9 /* AppDelegate.swift */; };
 		CEF1BE192BF453E8009655C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BE182BF453E8009655C9 /* SceneDelegate.swift */; };
-		CEF1BE1B2BF453E8009655C9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BE1A2BF453E8009655C9 /* MainViewController.swift */; };
+		CEF1BE1B2BF453E8009655C9 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BE1A2BF453E8009655C9 /* PlaceListViewController.swift */; };
 		CEF1BE212BF453E8009655C9 /* great_places_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BE1F2BF453E8009655C9 /* great_places_ios.xcdatamodeld */; };
 		CEF1BE232BF453E9009655C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF1BE222BF453E9009655C9 /* Assets.xcassets */; };
 		CEF1BE262BF453E9009655C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF1BE242BF453E9009655C9 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE02B1F52BF9209E00485DCF /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		CE02B1F72BF920C700485DCF /* PlaceLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocationModel.swift; sourceTree = "<group>"; };
+		CE02B1FA2BF9222700485DCF /* PlaceListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewCell.swift; sourceTree = "<group>"; };
+		CE5CB3F62BF6F6DF00D2821A /* Environments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environments.swift; sourceTree = "<group>"; };
+		CEEAE3BD2BF8526C0068A3D8 /* NewPlaceFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceFormViewController.swift; sourceTree = "<group>"; };
+		CEEAE3C02BF85CBB0068A3D8 /* ExampleEnvironments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEnvironments.swift; sourceTree = "<group>"; };
 		CEF1BE132BF453E8009655C9 /* great-places-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "great-places-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF1BE162BF453E8009655C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF1BE182BF453E8009655C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEF1BE1A2BF453E8009655C9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEF1BE1A2BF453E8009655C9 /* PlaceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
 		CEF1BE202BF453E8009655C9 /* great_places_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = great_places_ios.xcdatamodel; sourceTree = "<group>"; };
 		CEF1BE222BF453E9009655C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF1BE252BF453E9009655C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,12 +48,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5CB3EC2BF6F6A700D2821A /* GoogleMaps in Frameworks */,
+				CE5CB3F02BF6F6A700D2821A /* GoogleMapsCore in Frameworks */,
+				CE5CB3F22BF6F6A700D2821A /* GoogleMapsM4B in Frameworks */,
+				CE5CB3EE2BF6F6A700D2821A /* GoogleMapsBase in Frameworks */,
+				CE5CB3F52BF6F6B400D2821A /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE02B1F42BF9207400485DCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE02B1F52BF9209E00485DCF /* PlaceModel.swift */,
+				CE02B1F72BF920C700485DCF /* PlaceLocationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE02B1F92BF921A400485DCF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE02B1FA2BF9222700485DCF /* PlaceListViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEEAE3BC2BF8521B0068A3D8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEF1BE1A2BF453E8009655C9 /* PlaceListViewController.swift */,
+				CEEAE3BD2BF8526C0068A3D8 /* NewPlaceFormViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CEEAE3BF2BF85C620068A3D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE5CB3F62BF6F6DF00D2821A /* Environments.swift */,
+				CEF1BE162BF453E8009655C9 /* AppDelegate.swift */,
+				CEF1BE182BF453E8009655C9 /* SceneDelegate.swift */,
+				CEF1BE222BF453E9009655C9 /* Assets.xcassets */,
+				CEEAE3C02BF85CBB0068A3D8 /* ExampleEnvironments.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CEF1BE0A2BF453E8009655C9 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +116,10 @@
 		CEF1BE152BF453E8009655C9 /* great-places-ios */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1BE162BF453E8009655C9 /* AppDelegate.swift */,
-				CEF1BE182BF453E8009655C9 /* SceneDelegate.swift */,
-				CEF1BE1A2BF453E8009655C9 /* MainViewController.swift */,
-				CEF1BE222BF453E9009655C9 /* Assets.xcassets */,
+				CE02B1F92BF921A400485DCF /* Views */,
+				CE02B1F42BF9207400485DCF /* Model */,
+				CEEAE3BF2BF85C620068A3D8 /* Resources */,
+				CEEAE3BC2BF8521B0068A3D8 /* Controllers */,
 				CEF1BE242BF453E9009655C9 /* LaunchScreen.storyboard */,
 				CEF1BE272BF453E9009655C9 /* Info.plist */,
 				CEF1BE1F2BF453E8009655C9 /* great_places_ios.xcdatamodeld */,
@@ -83,6 +143,13 @@
 			dependencies = (
 			);
 			name = "great-places-ios";
+			packageProductDependencies = (
+				CE5CB3EB2BF6F6A700D2821A /* GoogleMaps */,
+				CE5CB3ED2BF6F6A700D2821A /* GoogleMapsBase */,
+				CE5CB3EF2BF6F6A700D2821A /* GoogleMapsCore */,
+				CE5CB3F12BF6F6A700D2821A /* GoogleMapsM4B */,
+				CE5CB3F42BF6F6B400D2821A /* Kingfisher */,
+			);
 			productName = "great-places-ios";
 			productReference = CEF1BE132BF453E8009655C9 /* great-places-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +178,10 @@
 				Base,
 			);
 			mainGroup = CEF1BE0A2BF453E8009655C9;
+			packageReferences = (
+				CE5CB3EA2BF6F6A700D2821A /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				CE5CB3F32BF6F6B400D2821A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = CEF1BE142BF453E8009655C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,9 +208,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF1BE1B2BF453E8009655C9 /* MainViewController.swift in Sources */,
+				CEEAE3BE2BF8526C0068A3D8 /* NewPlaceFormViewController.swift in Sources */,
+				CE02B1F62BF9209E00485DCF /* PlaceModel.swift in Sources */,
+				CEF1BE1B2BF453E8009655C9 /* PlaceListViewController.swift in Sources */,
 				CEF1BE212BF453E8009655C9 /* great_places_ios.xcdatamodeld in Sources */,
 				CEF1BE172BF453E8009655C9 /* AppDelegate.swift in Sources */,
+				CE5CB3F72BF6F6DF00D2821A /* Environments.swift in Sources */,
+				CEEAE3C12BF85CBB0068A3D8 /* ExampleEnvironments.swift in Sources */,
+				CE02B1F82BF920C700485DCF /* PlaceLocationModel.swift in Sources */,
+				CE02B1FB2BF9222700485DCF /* PlaceListViewCell.swift in Sources */,
 				CEF1BE192BF453E8009655C9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +440,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE5CB3EA2BF6F6A700D2821A /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.4.0;
+			};
+		};
+		CE5CB3F32BF6F6B400D2821A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE5CB3EB2BF6F6A700D2821A /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5CB3EA2BF6F6A700D2821A /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		CE5CB3ED2BF6F6A700D2821A /* GoogleMapsBase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5CB3EA2BF6F6A700D2821A /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsBase;
+		};
+		CE5CB3EF2BF6F6A700D2821A /* GoogleMapsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5CB3EA2BF6F6A700D2821A /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsCore;
+		};
+		CE5CB3F12BF6F6A700D2821A /* GoogleMapsM4B */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5CB3EA2BF6F6A700D2821A /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsM4B;
+		};
+		CE5CB3F42BF6F6B400D2821A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5CB3F32BF6F6B400D2821A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CEF1BE1F2BF453E8009655C9 /* great_places_ios.xcdatamodeld */ = {

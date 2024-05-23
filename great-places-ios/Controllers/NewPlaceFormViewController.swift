@@ -1,19 +1,19 @@
 //
-//  MainViewController.swift
+//  NewPlaceFormViewController.swift
 //  great-places-ios
 //
-//  Created by João Alexandre Bitar on 14/05/24.
+//  Created by João Alexandre Bitar on 18/05/24.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class NewPlaceFormViewController: UIViewController {
 
     // MARK: - Properties
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Great Places iOS"
+        label.text = "New Place Form"
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
     // MARK: - Helpers
     
     private func configureUI() {
+        title = "New Place Form"
         view.backgroundColor = .systemBackground
         view.addSubview(titleLabel)
     }
