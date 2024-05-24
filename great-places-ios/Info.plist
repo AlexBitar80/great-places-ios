@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>${PRODUCT_NAME} deseja acessa sua galeria de fotos. Por favor forneça permissão</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>${PRODUCT_NAME} deseja utilizar seu microfone. Por favor forneça permissão</string>
+	<key>NSCameraUsageDescription</key>
+	<string>${PRODUCT_NAME} deseja utilizar sua câmera. Por favor forneça permissão</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
