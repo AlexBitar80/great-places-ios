@@ -1,8 +1,20 @@
+//
+//  NewPlaceFormViewController.swift
+//  great-places-ios
+//
+//  Created by João Alexandre Bitar on 14/05/24.
+//
+
+
 import UIKit
+import Kingfisher
+import CoreLocation
 
 class NewPlaceFormViewController: UIViewController {
-
+    
     // MARK: - Properties
+    
+    private let locationManager = CLLocationManager()
     
     private lazy var placeImageView: UIImageView = {
         let imageView = UIImageView()
@@ -27,7 +39,7 @@ class NewPlaceFormViewController: UIViewController {
     private lazy var mapLocationImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.layer.borderWidth = 0.50
         imageView.layer.borderColor = UIColor.systemGray.cgColor
@@ -103,10 +115,21 @@ class NewPlaceFormViewController: UIViewController {
         addConstraints()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+    }
+    
     // MARK: - Helpers
     
     private func configureUI() {
-        title = "New Place Form"
+        title = "Adicionar novo local"
+        navigationController?.navigationBar.prefersLargeTitles = false
         view.backgroundColor = .systemBackground
         view.addSubview(titleTextfield)
         view.addSubview(mapLocationImageView)
@@ -159,8 +182,21 @@ class NewPlaceFormViewController: UIViewController {
     
     @objc private func addLocationButtonTapped() {}
     
-    @objc private func currentLocationButtonTapped() {}
-    
+    @objc private func currentLocationButtonTapped() {
+        Task {
+            guard let location = locationManager.location?.coordinate else { return }
+            
+            do {
+                let locationImageUrlString = try LocationService.shared.generateLocationPreviewImage(latitude: location.latitude, longitude: location.longitude)
+                guard let locationImageUrl = URL(string: locationImageUrlString) else { return }
+                
+                mapLocationImageView.kf.setImage(with: locationImageUrl)
+            } catch {
+                print("Failed to generate location preview image: \(error)")
+            }
+        }
+    }
+
     @objc private func selectOnMapButtonTapped() {}
     
     @objc private func showBottomSheet() {
@@ -202,12 +238,19 @@ extension NewPlaceFormViewController: UIImagePickerControllerDelegate, UINavigat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
             placeImageView.image = selectedImage
-            print(selectedImage)
         }
         dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension NewPlaceFormViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let _ = locations.first {
+            locationManager.stopUpdatingLocation()
+        }
     }
 }
