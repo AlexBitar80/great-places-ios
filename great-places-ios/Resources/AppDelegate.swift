@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        GMSServices.provideAPIKey(Environments.GoogleMapsAPIKey)
+        GMSServices.provideAPIKey(Environments.googleMapsAPIKey)
         
         return true
     }
