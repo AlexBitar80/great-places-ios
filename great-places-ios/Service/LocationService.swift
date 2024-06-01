@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import GoogleMaps
 
 enum LocationError: Error {
     case invalidURL
     case invalidApiKey
+    case invalidData
+    case noResults
 }
 
 class LocationService {
@@ -29,5 +32,25 @@ class LocationService {
         }
         
         return url.absoluteString
+    }
+
+    func getAddressFrom(latitude: Double, longitude: Double) async throws -> String {
+        
+        guard let apiKey = Environments.googleMapsAPIKey.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            throw LocationError.invalidApiKey
+        }
+        
+        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(latitude),\(longitude)&key=\(apiKey)"
+        
+        guard let url = URL(string: urlString) else {
+            throw LocationError.invalidURL
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        let decoder = JSONDecoder()
+        let response = try decoder.decode(GoogleMapsGeocodeResponseModel.self, from: data)
+        
+        return response.results?[0].formattedAddress ?? "Endereço não encontrado"
     }
 }

@@ -59,9 +59,10 @@ class NewPlaceFormViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(systemName: "mappin")
-        configuration.imagePadding = 8
+//        configuration.image = UIImage(systemName: "mappin")
+//        configuration.imagePadding = 4
         configuration.title = "Localização atual"
+//        configuration.background.backgroundColor = .yellow
         
         button.configuration = configuration
         button.addTarget(self, action: #selector(currentLocationButtonTapped), for: .touchUpInside)
@@ -73,9 +74,10 @@ class NewPlaceFormViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(systemName: "map")
-        configuration.imagePadding = 8
-        configuration.title = "Selecionar no mapa"
+//        configuration.image = UIImage(systemName: "map")
+//        configuration.imagePadding = 4
+//        configuration.background.backgroundColor = .red
+        configuration.title = "Escolher no mapa"
         
         button.configuration = configuration
         button.addTarget(self, action: #selector(selectOnMapButtonTapped), for: .touchUpInside)
@@ -129,7 +131,6 @@ class NewPlaceFormViewController: UIViewController {
     
     private func configureUI() {
         title = "Adicionar novo local"
-        navigationController?.navigationBar.prefersLargeTitles = false
         view.backgroundColor = .systemBackground
         view.addSubview(titleTextfield)
         view.addSubview(mapLocationImageView)
@@ -141,6 +142,8 @@ class NewPlaceFormViewController: UIViewController {
         for view in [currentLocationButton, selectOnMapButton] {
             buttonActionStackView.addArrangedSubview(view)
         }
+        
+        navigationItem.largeTitleDisplayMode = .never
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showBottomSheet))
         placeImageView.addGestureRecognizer(tapGesture)
@@ -180,7 +183,9 @@ class NewPlaceFormViewController: UIViewController {
         ])
     }
     
-    @objc private func addLocationButtonTapped() {}
+    @objc private func addLocationButtonTapped() {
+        
+    }
     
     @objc private func currentLocationButtonTapped() {
         Task {
@@ -197,7 +202,11 @@ class NewPlaceFormViewController: UIViewController {
         }
     }
 
-    @objc private func selectOnMapButtonTapped() {}
+    @objc private func selectOnMapButtonTapped() {
+        let viewController = SelectMapViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
     
     @objc private func showBottomSheet() {
         let alert = UIAlertController(title: "Adicionar foto", message: nil, preferredStyle: .actionSheet)
