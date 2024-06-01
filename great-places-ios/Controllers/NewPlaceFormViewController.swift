@@ -59,10 +59,7 @@ class NewPlaceFormViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         var configuration = UIButton.Configuration.plain()
-//        configuration.image = UIImage(systemName: "mappin")
-//        configuration.imagePadding = 4
         configuration.title = "Localização atual"
-//        configuration.background.backgroundColor = .yellow
         
         button.configuration = configuration
         button.addTarget(self, action: #selector(currentLocationButtonTapped), for: .touchUpInside)
@@ -74,9 +71,6 @@ class NewPlaceFormViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         var configuration = UIButton.Configuration.plain()
-//        configuration.image = UIImage(systemName: "map")
-//        configuration.imagePadding = 4
-//        configuration.background.backgroundColor = .red
         configuration.title = "Escolher no mapa"
         
         button.configuration = configuration
@@ -204,6 +198,7 @@ class NewPlaceFormViewController: UIViewController {
 
     @objc private func selectOnMapButtonTapped() {
         let viewController = SelectMapViewController()
+        viewController.delegate = self
         navigationController?.pushViewController(viewController, animated: true)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
@@ -256,10 +251,20 @@ extension NewPlaceFormViewController: UIImagePickerControllerDelegate, UINavigat
     }
 }
 
+// MARK: - CLLocationManagerDelegate
+
 extension NewPlaceFormViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let _ = locations.first {
             locationManager.stopUpdatingLocation()
         }
+    }
+}
+
+// MARK: - SelectMapViewControllerDelegate
+
+extension NewPlaceFormViewController: SelectMapViewControllerDelegate {
+    func didSelectLocation(_ address: String) {
+        print("Selected address: \(address)")
     }
 }
