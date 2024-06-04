@@ -8,11 +8,22 @@
 import UIKit
 import GoogleMaps
 
+// MARK: - SelectMapViewControllerDelegate
+
+protocol SelectMapViewControllerDelegate: AnyObject {
+    func didSelectLocation(_ address: String)
+}
+
+
 class SelectMapViewController: UIViewController {
     
     // MARK: - Properties
     
     private var currentMarker: GMSMarker?
+    
+    private var address: String = ""
+    
+    weak var delegate: SelectMapViewControllerDelegate?
     
     private lazy var mapView: GMSMapView = {
         let mapView = GMSMapView()
@@ -28,6 +39,7 @@ class SelectMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
         addConstraints()
     }
     
@@ -52,8 +64,13 @@ class SelectMapViewController: UIViewController {
         ])
     }
     
-    @objc private func addButtonTapped() {}
+    @objc private func addButtonTapped() {
+        delegate?.didSelectLocation(address)
+        navigationController?.popViewController(animated: true)
+    }
 }
+
+// MARK: - GMSMapViewDelegate
 
 extension SelectMapViewController: GMSMapViewDelegate {
    
@@ -63,11 +80,12 @@ extension SelectMapViewController: GMSMapViewDelegate {
             let marker = GMSMarker(position: coordinate)
             marker.map = mapView
             currentMarker = marker
-            
+
             do {
                 let address = try await LocationService.shared.getAddressFrom(latitude: coordinate.latitude,
                                                                               longitude: coordinate.longitude)
-                print(address)
+                
+                self.address = address
             } catch {
                 print("Error: \(error.localizedDescription)")
             }
