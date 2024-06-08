@@ -35,10 +35,11 @@ class PLaceListViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "Great Places iOS"
         view.addSubview(tableView)
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: #selector(addButtonTapped))
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .automatic
     }
     
     @objc private func addButtonTapped() {

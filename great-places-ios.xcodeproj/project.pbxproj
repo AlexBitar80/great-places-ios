@@ -10,12 +10,16 @@
 		CE02B1F62BF9209E00485DCF /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02B1F52BF9209E00485DCF /* PlaceModel.swift */; };
 		CE02B1F82BF920C700485DCF /* PlaceLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02B1F72BF920C700485DCF /* PlaceLocationModel.swift */; };
 		CE02B1FB2BF9222700485DCF /* PlaceListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02B1FA2BF9222700485DCF /* PlaceListViewCell.swift */; };
+		CE2DC3ED2C0A5A7C007BA2C2 /* GoogleMapsGeocodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2DC3EC2C0A5A7C007BA2C2 /* GoogleMapsGeocodeResponseModel.swift */; };
+		CE2DC3EF2C0A5ABE007BA2C2 /* GeocodeResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2DC3EE2C0A5ABE007BA2C2 /* GeocodeResultModel.swift */; };
 		CE5CB3EC2BF6F6A700D2821A /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3EB2BF6F6A700D2821A /* GoogleMaps */; };
 		CE5CB3EE2BF6F6A700D2821A /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3ED2BF6F6A700D2821A /* GoogleMapsBase */; };
 		CE5CB3F02BF6F6A700D2821A /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3EF2BF6F6A700D2821A /* GoogleMapsCore */; };
 		CE5CB3F22BF6F6A700D2821A /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3F12BF6F6A700D2821A /* GoogleMapsM4B */; };
 		CE5CB3F52BF6F6B400D2821A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3F42BF6F6B400D2821A /* Kingfisher */; };
 		CE5CB3F72BF6F6DF00D2821A /* Environments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB3F62BF6F6DF00D2821A /* Environments.swift */; };
+		CE7D57452C02ED5A0088DACB /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D57442C02ED5A0088DACB /* LocationService.swift */; };
+		CED9548B2C0593B300155402 /* SelectMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9548A2C0593B300155402 /* SelectMapViewController.swift */; };
 		CEEAE3BE2BF8526C0068A3D8 /* NewPlaceFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAE3BD2BF8526C0068A3D8 /* NewPlaceFormViewController.swift */; };
 		CEEAE3C12BF85CBB0068A3D8 /* ExampleEnvironments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAE3C02BF85CBB0068A3D8 /* ExampleEnvironments.swift */; };
 		CEF1BE172BF453E8009655C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BE162BF453E8009655C9 /* AppDelegate.swift */; };
@@ -30,7 +34,11 @@
 		CE02B1F52BF9209E00485DCF /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		CE02B1F72BF920C700485DCF /* PlaceLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocationModel.swift; sourceTree = "<group>"; };
 		CE02B1FA2BF9222700485DCF /* PlaceListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewCell.swift; sourceTree = "<group>"; };
+		CE2DC3EC2C0A5A7C007BA2C2 /* GoogleMapsGeocodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsGeocodeResponseModel.swift; sourceTree = "<group>"; };
+		CE2DC3EE2C0A5ABE007BA2C2 /* GeocodeResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeResultModel.swift; sourceTree = "<group>"; };
 		CE5CB3F62BF6F6DF00D2821A /* Environments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environments.swift; sourceTree = "<group>"; };
+		CE7D57442C02ED5A0088DACB /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		CED9548A2C0593B300155402 /* SelectMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMapViewController.swift; sourceTree = "<group>"; };
 		CEEAE3BD2BF8526C0068A3D8 /* NewPlaceFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceFormViewController.swift; sourceTree = "<group>"; };
 		CEEAE3C02BF85CBB0068A3D8 /* ExampleEnvironments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEnvironments.swift; sourceTree = "<group>"; };
 		CEF1BE132BF453E8009655C9 /* great-places-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "great-places-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,8 +70,10 @@
 		CE02B1F42BF9207400485DCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE2DC3EC2C0A5A7C007BA2C2 /* GoogleMapsGeocodeResponseModel.swift */,
 				CE02B1F52BF9209E00485DCF /* PlaceModel.swift */,
 				CE02B1F72BF920C700485DCF /* PlaceLocationModel.swift */,
+				CE2DC3EE2C0A5ABE007BA2C2 /* GeocodeResultModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -76,11 +86,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CE7D57432C02ECBF0088DACB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D57442C02ED5A0088DACB /* LocationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		CEEAE3BC2BF8521B0068A3D8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				CEF1BE1A2BF453E8009655C9 /* PlaceListViewController.swift */,
 				CEEAE3BD2BF8526C0068A3D8 /* NewPlaceFormViewController.swift */,
+				CED9548A2C0593B300155402 /* SelectMapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -116,6 +135,7 @@
 		CEF1BE152BF453E8009655C9 /* great-places-ios */ = {
 			isa = PBXGroup;
 			children = (
+				CE7D57432C02ECBF0088DACB /* Service */,
 				CE02B1F92BF921A400485DCF /* Views */,
 				CE02B1F42BF9207400485DCF /* Model */,
 				CEEAE3BF2BF85C620068A3D8 /* Resources */,
@@ -213,7 +233,11 @@
 				CEF1BE1B2BF453E8009655C9 /* PlaceListViewController.swift in Sources */,
 				CEF1BE212BF453E8009655C9 /* great_places_ios.xcdatamodeld in Sources */,
 				CEF1BE172BF453E8009655C9 /* AppDelegate.swift in Sources */,
+				CE2DC3EF2C0A5ABE007BA2C2 /* GeocodeResultModel.swift in Sources */,
+				CED9548B2C0593B300155402 /* SelectMapViewController.swift in Sources */,
 				CE5CB3F72BF6F6DF00D2821A /* Environments.swift in Sources */,
+				CE7D57452C02ED5A0088DACB /* LocationService.swift in Sources */,
+				CE2DC3ED2C0A5A7C007BA2C2 /* GoogleMapsGeocodeResponseModel.swift in Sources */,
 				CEEAE3C12BF85CBB0068A3D8 /* ExampleEnvironments.swift in Sources */,
 				CE02B1F82BF920C700485DCF /* PlaceLocationModel.swift in Sources */,
 				CE02B1FB2BF9222700485DCF /* PlaceListViewCell.swift in Sources */,
@@ -364,6 +388,12 @@
 				DEVELOPMENT_TEAM = LFHK2L5V9K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "great-places-ios/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "great-places-ios deseja utilizar sua câmera. Por favor forneça permissão";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Este aplicativo precisa acessar sua localização para fornecer serviços personalizados e recomendações baseadas em sua localização, mesmo quando o aplicativo não estiver em uso.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Precisamos da sua localização para fornecer uma melhor experiência, mesmo quando o aplicativo está em segundo plano.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Precisamos da sua localização para mostrar lugares próximos.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "great-places-ios deseja utilizar seu microfone. Por favor forneça permissão";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "great-places-ios deseja acessa sua galeria de fotos. Por favor forneça permissão";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -396,6 +426,12 @@
 				DEVELOPMENT_TEAM = LFHK2L5V9K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "great-places-ios/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "great-places-ios deseja utilizar sua câmera. Por favor forneça permissão";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Este aplicativo precisa acessar sua localização para fornecer serviços personalizados e recomendações baseadas em sua localização, mesmo quando o aplicativo não estiver em uso.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Precisamos da sua localização para fornecer uma melhor experiência, mesmo quando o aplicativo está em segundo plano.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Precisamos da sua localização para mostrar lugares próximos.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "great-places-ios deseja utilizar seu microfone. Por favor forneça permissão";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "great-places-ios deseja acessa sua galeria de fotos. Por favor forneça permissão";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
