@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import CoreData
 
 class PlaceListViewCell: UITableViewCell {
     
@@ -98,8 +99,7 @@ class PlaceListViewCell: UITableViewCell {
     }
     
     func configureCell(with place: Place) {
-        let url = URL(string: place.image)
-        locationImage.kf.setImage(with: url)
+        locationImage.image = UIImage(data: place.image)
         mainTitle.text = place.title
         subtitle.text = place.location.address
     }
