@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class PLaceListViewController: UIViewController {
-
+    
     // MARK: - Properties
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -17,8 +17,8 @@ class PLaceListViewController: UIViewController {
     private var models = [PlaceItem]()
     
     private lazy var tableView: UITableView = {
-       let tableView = UITableView()
-        tableView.register(PlaceListViewCell.self, 
+        let tableView = UITableView()
+        tableView.register(PlaceListViewCell.self,
                            forCellReuseIdentifier: PlaceListViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
@@ -112,5 +112,26 @@ extension PLaceListViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    // TODO: Implement delete functionality
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let place = models[indexPath.row]
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (action, view, completion) in
+            self.context.delete(place)
+            do {
+                try self.context.save()
+                self.getAllPlaces()
+            } catch error {
+                debugPrint("Error deleting place: \(error.localizedDescription)")
+            }
+            completion(true)
+        }
+        
+        deleteAction.image = UIImage(systemName: "trash")
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 }
