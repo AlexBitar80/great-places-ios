@@ -9,12 +9,18 @@
 import UIKit
 import Kingfisher
 import CoreLocation
+import CoreData
 
 class NewPlaceFormViewController: UIViewController {
     
     // MARK: - Properties
     
+    private var selectedImage: UIImage = UIImage()
+    private var address: String = ""
+    
     private let locationManager = CLLocationManager()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private lazy var placeImageView: UIImageView = {
         let imageView = UIImageView()
@@ -177,8 +183,34 @@ class NewPlaceFormViewController: UIViewController {
         ])
     }
     
+    func savePlace(image: UIImage, title: String, address: String) {
+        let newPlace = PlaceItem(context: context)
+        
+        guard let imageData = image.jpegData(compressionQuality: 1.0) else { return }
+        
+        newPlace.image = imageData
+        newPlace.title = title
+        newPlace.address = address
+
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
     @objc private func addLocationButtonTapped() {
         
+        guard let title = titleTextfield.text, !title.isEmpty else {
+            let alert = UIAlertController(title: "Erro", message: "O campo título não pode ser vazio", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        savePlace(image: selectedImage, title: title, address: address)
+        
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func currentLocationButtonTapped() {
@@ -186,9 +218,17 @@ class NewPlaceFormViewController: UIViewController {
             guard let location = locationManager.location?.coordinate else { return }
             
             do {
-                let locationImageUrlString = try LocationService.shared.generateLocationPreviewImage(latitude: location.latitude, longitude: location.longitude)
+                let locationImageUrlString = try LocationService.shared.generateLocationPreviewImage(
+                    latitude: location.latitude,
+                    longitude: location.longitude
+                )
+                
+                let address = try await LocationService.shared.getAddressFrom(latitude: location.latitude,
+                                                                              longitude: location.longitude)
+                
                 guard let locationImageUrl = URL(string: locationImageUrlString) else { return }
                 
+                self.address = address
                 mapLocationImageView.kf.setImage(with: locationImageUrl)
             } catch {
                 print("Failed to generate location preview image: \(error)")
@@ -239,9 +279,11 @@ extension NewPlaceFormViewController: UITextFieldDelegate {
 // MARK: - UIImagePickerControllerDelegate
 
 extension NewPlaceFormViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, 
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
             placeImageView.image = selectedImage
+            self.selectedImage = selectedImage
         }
         dismiss(animated: true, completion: nil)
     }
@@ -265,6 +307,6 @@ extension NewPlaceFormViewController: CLLocationManagerDelegate {
 
 extension NewPlaceFormViewController: SelectMapViewControllerDelegate {
     func didSelectLocation(_ address: String) {
-        print("Selected address: \(address)")
+        self.address = address
     }
-}
+ }

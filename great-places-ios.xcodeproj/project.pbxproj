@@ -18,6 +18,8 @@
 		CE5CB3F22BF6F6A700D2821A /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3F12BF6F6A700D2821A /* GoogleMapsM4B */; };
 		CE5CB3F52BF6F6B400D2821A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CB3F42BF6F6B400D2821A /* Kingfisher */; };
 		CE5CB3F72BF6F6DF00D2821A /* Environments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB3F62BF6F6DF00D2821A /* Environments.swift */; };
+		CE71692A2C1563B60078E25E /* PlaceItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7169282C1563B60078E25E /* PlaceItem+CoreDataClass.swift */; };
+		CE71692B2C1563B60078E25E /* PlaceItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7169292C1563B60078E25E /* PlaceItem+CoreDataProperties.swift */; };
 		CE7D57452C02ED5A0088DACB /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D57442C02ED5A0088DACB /* LocationService.swift */; };
 		CED9548B2C0593B300155402 /* SelectMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9548A2C0593B300155402 /* SelectMapViewController.swift */; };
 		CEEAE3BE2BF8526C0068A3D8 /* NewPlaceFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAE3BD2BF8526C0068A3D8 /* NewPlaceFormViewController.swift */; };
@@ -37,6 +39,8 @@
 		CE2DC3EC2C0A5A7C007BA2C2 /* GoogleMapsGeocodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsGeocodeResponseModel.swift; sourceTree = "<group>"; };
 		CE2DC3EE2C0A5ABE007BA2C2 /* GeocodeResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeResultModel.swift; sourceTree = "<group>"; };
 		CE5CB3F62BF6F6DF00D2821A /* Environments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environments.swift; sourceTree = "<group>"; };
+		CE7169282C1563B60078E25E /* PlaceItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CE7169292C1563B60078E25E /* PlaceItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE7D57442C02ED5A0088DACB /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		CED9548A2C0593B300155402 /* SelectMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMapViewController.swift; sourceTree = "<group>"; };
 		CEEAE3BD2BF8526C0068A3D8 /* NewPlaceFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceFormViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 				CE02B1FA2BF9222700485DCF /* PlaceListViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CE71692C2C1563D30078E25E /* PlaceItem */ = {
+			isa = PBXGroup;
+			children = (
+				CE7169282C1563B60078E25E /* PlaceItem+CoreDataClass.swift */,
+				CE7169292C1563B60078E25E /* PlaceItem+CoreDataProperties.swift */,
+			);
+			path = PlaceItem;
 			sourceTree = "<group>";
 		};
 		CE7D57432C02ECBF0088DACB /* Service */ = {
@@ -135,6 +148,7 @@
 		CEF1BE152BF453E8009655C9 /* great-places-ios */ = {
 			isa = PBXGroup;
 			children = (
+				CE71692C2C1563D30078E25E /* PlaceItem */,
 				CE7D57432C02ECBF0088DACB /* Service */,
 				CE02B1F92BF921A400485DCF /* Views */,
 				CE02B1F42BF9207400485DCF /* Model */,
@@ -229,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEAE3BE2BF8526C0068A3D8 /* NewPlaceFormViewController.swift in Sources */,
+				CE71692A2C1563B60078E25E /* PlaceItem+CoreDataClass.swift in Sources */,
 				CE02B1F62BF9209E00485DCF /* PlaceModel.swift in Sources */,
 				CEF1BE1B2BF453E8009655C9 /* PlaceListViewController.swift in Sources */,
 				CEF1BE212BF453E8009655C9 /* great_places_ios.xcdatamodeld in Sources */,
@@ -239,6 +254,7 @@
 				CE7D57452C02ED5A0088DACB /* LocationService.swift in Sources */,
 				CE2DC3ED2C0A5A7C007BA2C2 /* GoogleMapsGeocodeResponseModel.swift in Sources */,
 				CEEAE3C12BF85CBB0068A3D8 /* ExampleEnvironments.swift in Sources */,
+				CE71692B2C1563B60078E25E /* PlaceItem+CoreDataProperties.swift in Sources */,
 				CE02B1F82BF920C700485DCF /* PlaceLocationModel.swift in Sources */,
 				CE02B1FB2BF9222700485DCF /* PlaceListViewCell.swift in Sources */,
 				CEF1BE192BF453E8009655C9 /* SceneDelegate.swift in Sources */,
